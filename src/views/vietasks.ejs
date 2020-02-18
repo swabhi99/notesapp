@@ -1,0 +1,28 @@
+<%-include('./includes/head')%>
+<main>
+    <%-include('./includes/header')%>
+    <div class="container" style="margin-top:1rem">
+        <a class="btn btn-light btn-lg" href="/addtasks" role="button">Add Notes</a>
+   <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+<%if(tasks.length>0){%>
+   
+        <% tasks.forEach((t)=>{ %>
+            <p class="secret-text"><%=t.description%> <a href="/tasks/<%=t._id%>"><span class="glyphicon glyphicon-remove"></span></a></p>
+       <% }) %>
+     
+<%}else{%>
+    <p>No Notes Found!!</p>
+    
+<%}%>
+   
+</div>
+
+
+   
+   
+    
+</main>
+<%-include('./includes/footer')%>
+
+</body>
+</html>
